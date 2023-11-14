@@ -25,13 +25,112 @@ body {
   border-bottom: 1px solid #180202;
 }
 .header .logo {
-  width: 56px;
-  height: 56px;
+  width: 2.5rem;
+  height: 2.5rem;
   margin-right: 12px;
 }
 .header .header-title {
   font-size: 3.5rem;
-  line-height: 100%;
+  line-height: 70%;
+}
+.header .git {
+  height: 2.5rem;
+  width: 2.5rem;
+  margin-left: auto;
+}
+.header .git img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  cursor: pointer;
+}
+
+.main {
+  max-width: 90%;
+  margin: 3rem auto 0;
+  padding-bottom: 5rem;
+}
+.main .game {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.main .board {
+  width: 500px;
+  height: 500px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  position: relative;
+  z-index: 1;
+  box-shadow: 1px 1px 25px rgb(230, 230, 230);
+}
+.main .board .modal {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(230, 230, 230, 0.24);
+  backdrop-filter: blur(5px);
+  z-index: 2;
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+.main .board .modal.opened {
+  display: flex;
+}
+.main .board .modal .start {
+  padding: 0.8rem 1.2rem;
+  border-radius: 12px;
+  border: 1px solid #180202;
+  cursor: pointer;
+}
+.main .board .box:nth-child(1), .main .board .box:nth-child(4) {
+  border-bottom: 1px solid #180202;
+  border-right: 1px solid #180202;
+}
+.main .board .box:nth-child(2), .main .board .box:nth-child(5) {
+  border-bottom: 1px solid #180202;
+  border-right: 1px solid #180202;
+}
+.main .board .box:nth-child(3), .main .board .box:nth-child(6) {
+  border-bottom: 1px solid #180202;
+}
+.main .board .box:nth-child(7), .main .board .box:nth-child(8) {
+  border-right: 1px solid #180202;
+}
+.main .choice {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.main .choice .choice-title {
+  font-size: 1.5rem;
+}
+.main .choice .choice-variants {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  font-weight: 700;
+}
+.main .choice .choice-variants div {
+  color: #ccc;
+  font-size: 3rem;
+  transition: 0.3s all ease-in;
+  cursor: pointer;
+}
+.main .choice .choice-variants .crosses:hover {
+  color: #d12600;
+  transform: scale(1.2);
+}
+.main .choice .choice-variants .circles:hover {
+  color: #3c72be;
+  transform: scale(1.2);
+}
+.main .choice .choice-variants .crosses.active {
+  color: #ff6d4d !important;
+}
+.main .choice .choice-variants .circles.active {
+  color: #0565f5 !important;
 }
 
 /*# sourceMappingURL=style.css.map */
